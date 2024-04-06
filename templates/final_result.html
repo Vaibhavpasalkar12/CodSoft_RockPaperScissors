@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Result</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+        }
+        body {
+            text-align: center;
+        }
+        h2{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>Final Result</h2>
+    <p>User's Score: {{ user_score }}</p>
+    <p>Computer's Score: {{ comp_score }}</p>
+    <p>Ties: {{ ties }}</p>
+    <p style="color: crimson;">
+        {% if user_score > comp_score %}
+            Final Winner: User
+        {% elif user_score < comp_score %}
+            Final Winner: Computer
+        {% else %}
+            It's a Tie
+        {% endif %}
+    </p>
+    <a href="/reset">Play Again</a>
+</body>
+</html>

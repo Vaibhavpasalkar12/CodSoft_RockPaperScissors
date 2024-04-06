@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        #game-section {
+            display: none; 
+        }
+        h1{
+            color: yellow;
+        }
+        h2{
+            color: yellowgreen;
+        }
+        h6{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors Game</h1>
+    
+    <div id="instructions-section">
+        <h2>Instructions</h2>
+        <p style="color: darkorange;">Before starting the game, please read the instructions:</p>
+        <p>Rock VS Paper = Paper</p>
+        <p>Paper VS Scissors = Scissors</p>
+        <p>Scissors VS Rock = Rock</p>
+        <h6>Choose either Rock, Paper, or Scissors by clicking one of the buttons below.</h6>
+        <button onclick="startGame()">Play</button>
+    </div>
+
+    <div id="game-section">
+        <form action="/play" method="post">
+            <button type="submit" name="choice" value="Rock">Rock</button>
+            <button type="submit" name="choice" value="Paper">Paper</button>
+            <button type="submit" name="choice" value="Scissor">Scissor</button>
+        </form>
+        <br>
+        <a href="/">Play Again</a><br>
+        <br><a href="/final_result">Quit</a>
+    </div>
+
+    <script>
+        function startGame() {
+            document.getElementById("instructions-section").style.display = "none"; 
+            document.getElementById("game-section").style.display = "block"; 
+        }
+    </script>
+</body>
+</html>
